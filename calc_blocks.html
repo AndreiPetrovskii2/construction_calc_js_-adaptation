@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="block_of_calc">
+        <div class="calc">
+            <div class="block_size">
+                <p> Размер (Д*Ш*В) или вид блока</p>
+                <div>
+                    <select name="" id="select_block">
+                    <option>250х120х65</option>
+                    <option>250х120х88</option>
+                    <option>250х120х140</option>
+                    <option>510х120х219</option>
+                    <option>510х180х220</option>
+                    <option>510х200х219</option>
+                    <option>510х250х219</option>
+                    <option>250х300х219</option>
+                    <option>250х380х219</option>
+                    <option>250х510х219</option>
+                    <option>380х250х219</option>
+                    <option>380х200х219</option>
+                    <option>380х180х219</option>
+                    <option>510х100х219</option>
+                    </select>
+                    <span>ММ</span>
+                </div>
+            </div>
+            <div class="cblock">
+                <p>Цена за 1шт. блока</p>
+                <div class="inputs_meaning">
+                    <input id="block_price" type="text">
+                    <span>РУБ</span>
+                </div>
+            </div>
+            <div class="cblock">
+                <p>Общая длина всех стен (периметр)</p>
+                <div class="inputs_meaning">
+                    <input id="walls" type="text">
+                    <span>М</span>
+                </div>
+            </div>
+            <div class="cblock">
+                <p>Высота стен</p>
+                <div class="inputs_meaning">
+                    <input id="walls_height" type="text">
+                    <span>М</span>
+                </div>
+            </div>
+            <div class="block_walls">
+                <p>Толщина стен</p>
+                <select name="" id="select_walls">
+                    <option value="0.5">Половина блока</option>
+                    <option value="1" selected>В 1 блок</option>
+                    <option value="1.5">В 1,5 блока</option>
+                    <option value="2">В 2 блока</option>
+                </select>
+            </div>
+            <div class="Additional_sections">
+                <div class="windows">
+                    <button class="button_window" id="window_doors_open">Добавить окна</button>
+                    <button class="button_window_close" style="display: none;" id="window_doors_close">Убрать окна </button>
+                    <div id="window_doors" class="window_doors">
+                        <div class="block_window">
+                            <p>Количество окон</p>
+                            <input class="quantity_input" id="window_quantity" type="text">
+                        </div>
+                        <div class="block_window">
+                            <p>Высота окна</p>
+                            <div class="inputs_meaning">
+                                <input id="window_height" type="text">
+                                <span>СМ</span>
+                            </div>
+                        </div>
+                        <div class="block_window">
+                            <p>Ширина окна</p>
+                            <div class="inputs_meaning">
+                                <input id="window_widht" type="text">
+                                <span>СМ</span>
+                            </div>
+                        </div>
+                    </div>                          
+                </div>
+                <div class="doors">
+                    <button class="button_door" id="doors_open">Добавить двери</button>
+                    <button class="button_door_close" style="display: none;" id="doors_close">Убрать двери</button>
+                    <div id="doors_div" class="doors_value">
+                        <div class="block_door">
+                            <p>Количество дверей</p>
+                            <input class="quantity_input" id="door_quantity" type="text">
+                        </div>
+                        <div class="block_door">
+                            <p>Высота двери</p>
+                            <div class="inputs_meaning">
+                                <input id="door_height" type="text">
+                                <span>СМ</span>
+                            </div>
+                        </div>
+                        <div class="block_door">
+                            <p>Ширина двери</p>
+                            <div class="inputs_meaning">
+                                <input id="door_widht" type="text">
+                                <span>СМ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frontons">
+                    <button class="button_fronton" id="fronton_open">Добавить фронтоны</button>
+                    <button class="button_fronton_close" id="fronton_close" style="display: none;">Убрать фронтоны</button>
+                    <div id="fronton_div" class="fronton_value">
+                    <div class="block_fronton">
+                        <p>Количество фронтонов</p>
+                        <input class="quantity_input" id="fronton_value" type="text">
+                    </div>
+                    <div class="block_fronton">
+                        <p>Высота фронтона</p>
+                        <div class="inputs_meaning">
+                            <input id="front_h" type="text">
+                            <span>СМ</span>
+                        </div>
+                    </div>
+                    <div class="block_fronton">
+                        <p>Ширина фронтона</p>
+                        <div class="inputs_meaning">
+                            <input id="front_w" type="text">
+                            <span>СМ</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <button class="button_sum" id="sum">Рассчитать</button>
+                <div id="all_results" class="result_value">
+                    <div class="first_results">
+                        <p id="wall_S_text"></p>
+                        <p id="fronton_s_text"></p>
+                        <p id="window_S_text"></p>
+                        <p id="door_s_text"></p>
+                    </div>
+                    <div class="second_results">
+                        <p id="all_walls_S_text"></p>
+                        <p>Всего блоков нужно <span id="all_blocks_need"></span></p>
+                        <p>Цена всех блоков <span id="block_price_text"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="pop_menu_open.js"></script>
+    <script src="bricks_calc.js"></script>
+</body>
+</html>
